@@ -1,0 +1,56 @@
+import random
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)_______
+          _________)
+          ________)
+         ________)
+---.___________)
+'''
+
+scissors = '''
+    _______
+---'   ____)______
+          ________)
+       ____________)
+      (____)
+---.__(___)
+'''
+choice=[scissors,paper,rock]
+computer_choice=random.randint(0,2)
+player_choice=int(input("Enter your choice\n(Enter 0 for scissors , 1 for paper , 2 for rock\n:"))
+if player_choice != 0 or 1 or 2:
+    print("Wrong input\nOnly type 0 , 1 or 2\nRandom choice will be selected for player")
+    player_choice=random.randint(0,2)
+print(choice[player_choice])
+print(f"\n{choice[computer_choice]}")
+if player_choice == 0:
+    if computer_choice == 0:
+        print("Draw")
+    elif computer_choice == 1:
+        print("The player wins!")
+    elif computer_choice == 2:
+        print("The computer wins!\nYou lose")
+elif player_choice == 1:
+    if computer_choice == 0:
+        print("The computer wins!\nYou lose")
+    elif computer_choice == 1:
+        print("Draw")
+    elif computer_choice == 2:
+        print("The player wins!")
+elif player_choice == 2:
+    if computer_choice == 1:
+        print("The computer wins!\nYou lose")
+    elif computer_choice == 2:
+        print("Draw")
+    elif computer_choice == 0:
+        print("The player wins!")
